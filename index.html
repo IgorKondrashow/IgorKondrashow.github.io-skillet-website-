@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
     <!-- Yandex.Metrika counter -->
-    <button onclick="sendYandexGoal('pages', 'Дискография')">Дискография</button>
-<a href="/discography.html" onclick="sendYandexGoal('discography', 'Переход в Дискографию')">Дискография</a>
+
 
 <script>
 function sendYandexGoal(goalId, goalDescription) {
@@ -29,6 +28,14 @@ function sendYandexGoal(goalId, goalDescription) {
     })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104337873', 'ym');
 
     ym(104337873, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+    function sendYandexGoal(goalId, goalDescription) {
+    if (typeof ym !== 'undefined') {
+        ym(104337873, 'reachGoal', goalId, {
+            goal_description: goalDescription
+        });
+    }
+    return true;
+}
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/104337873" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
@@ -42,7 +49,7 @@ function sendYandexGoal(goalId, goalDescription) {
                     <li><a href="index.html">Главная</a></li>
                     <li><a href="pages/about.html">О группе</a></li>
                     <li><a href="pages/discography.html">Дискография</a></li>
-                    <li><a href="pages/members.html">Участники</a></li>
+                    <li><a onclick href="pages/members.html">Участники</a></li>
                 </ul>
             </nav>
         </div>
@@ -176,5 +183,6 @@ function sendYandexGoal(goalId, goalDescription) {
 </body>
 
 </html>
+
 
 

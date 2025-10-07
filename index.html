@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
     <!-- Yandex.Metrika counter -->
+    <button onclick="sendYandexGoal('buy_button', 'Покупка товара')">Купить</button>
+<a href="/details" onclick="sendYandexGoal('details_link', 'Переход в детали')">Подробнее</a>
+
+<script>
+function sendYandexGoal(goalId, goalDescription) {
+    if (typeof ym !== 'undefined') {
+        ym(12345678, 'reachGoal', goalId, {
+            goal_description: goalDescription
+        });
+    }
+    return true;
+}
+</script>
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -163,3 +176,4 @@
 </body>
 
 </html>
+
